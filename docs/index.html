@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Beranda Tugas Kelompok - Model Ising 2D</title>
+    <style type="text/css">
+        :root {
+            --body-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --title-color: #1e293b;
+            --primary-color: #2563eb;
+            --border-color: #e2e8f0;
+            --accent-bg: #f1f5f9;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .header-panel {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        h1 {
+            color: var(--title-color);
+            font-size: 2.25rem;
+            margin: 0 0 10px 0;
+        }
+        
+        .group-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        
+        .section-title {
+            color: var(--title-color);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-align: left;
+        }
+        
+        .member-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0 0;
+            text-align: left;
+        }
+        
+        .member-item {
+            background: var(--accent-bg);
+            margin-bottom: 8px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .member-name {
+            font-weight: 600;
+        }
+        
+        .member-nim {
+            font-family: "Fira Code", Monaco, Consolas, monospace;
+            background: #cbd5e1;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .case-link {
+            display: block;
+            padding: 20px;
+            background: var(--body-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--title-color);
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .case-link:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+
+        .case-link h3 {
+            margin: 0 0 8px 0;
+            color: var(--primary-color);
+            font-size: 1.15rem;
+        }
+
+        .case-link p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        ul.task-steps {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        ul.task-steps li {
+            margin-bottom: 10px;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-panel">
+        <div class="group-badge">KELOMPOK: SPX</div>
+        <h1>Fisika Komputasi:<br>Simulasi Model Ising 2D via Algoritma Metropolis</h1>
+        <p style="color: #64748b; margin: 10px 0 0 0; font-size: 1.1rem;">Studi Kasus Komprehensif Mengenai Model Ising 2 Dimensi (2D) dan Transisi Fasa</p>
+        
+        <div class="section-title">Anggota Kelompok</div>
+        <ul class="member-list">
+            <li class="member-item">
+                <span class="member-name">1. Juan Prayoga</span>
+                <span class="member-nim">01241007</span>
+            </li>
+            <li class="member-item">
+                <span class="member-name">2. Muhammad Afrizal Ma'arif</span>
+                <span class="member-nim">01241014</span>
+            </li>
+            <li class="member-item">
+                <span class="member-name">3. Muhammad Zahid Tegar Alamsyah</span>
+                <span class="member-nim">01241017</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-card">
+        <div class="info-box">
+            <strong>💡 Batas Pengumpulan:</strong> Halaman GitHub Pages masing-masing maksimal dapat diakses secara online pada tanggal <strong>1 Juli 2026 jam 09.00 WITA Pagi</strong>.
+        </div>
+
+        <div class="section-title">Pengantar Latar Belakang</div>
+        <p>
+            Model Ising 2 Dimensi (2D) merupakan salah satu pilar teoretis utama dalam mekanika statistik untuk mempelajari fenomena kemagnetan dan transisi fasa makroskopis. Melalui implementasi simulasi Monte Carlo berbasis <strong>Algoritma Metropolis</strong>, sistem kisi magnetik disimulasikan untuk mengamati perilaku kolektif partikel yang memicu terjadinya magnetisasi spontan.
+        </p>
+
+        <div class="section-title">Akses Berkas Analisis Kasus (HTML)</div>
+        <p>Berdasarkan kondisi termodinamika sistem, simulasi dan analisis dibagi ke dalam tiga studi kasus utama dengan konfigurasi kisi awal berupa <em>Hot Start</em> ($N \times N$, $N=20$) dan pengumpulan data makrostate dilakukan setelah melewati minimal 200.000 langkah Monte Carlo demi menjamin kesetimbangan termal:</p>
+        
+        <div class="links-grid">
+            <a class="case-link" href="simulasi_model_ising_2d_kasus_1_rendah_fixed.html" target="_blank">
+                <h3>Kasus 1: Fase Feromagnetik</h3>
+                <p>Simulasi pada temperatur rendah (T = 1.0 < T<sub>c</sub>). Spin membentuk domain searah secara spontan (|M| &approx; 1).</p>
+            </a>
+            <a class="case-link" href="simulasi_model_ising_2d_kasus_2_kritis_fixed.html" target="_blank">
+                <h3>Kasus 2: Transisi Fasa & Kritikalitas</h3>
+                <p>Simulasi pada temperatur kritis teoritis (T = 2.27 &approx; T<sub>c</sub>). Terjadi fluktuasi kritis dan pola fraktal.</p>
+            </a>
+            <a class="case-link" href="simulasi_model_ising_2d_kasus_3_tinggi_fixed.html" target="_blank">
+                <h3>Kasus 3: Fase Paramagnetik</h3>
+                <p>Simulasi pada temperatur tinggi (T = 4.0 > T<sub>c</sub>). Energi termal mendominasi interaksi, spin acak (M &approx; 0).</p>
+            </a>
+        </div>
+
+        <div class="section-title">Kriteria Evaluasi Tugas</div>
+        <ul class="task-steps">
+            <li><strong>Akurasi Matematis & Fisis:</strong> Ketepatan formulasi selisih energi lokal &Delta;E menggunakan kondisi batas periodik (modulo) serta penerapan probabilitas penerimaan Metropolis R = e<sup>-&Delta;E/T</sup>.</li>
+            <li><strong>Efisiensi Komputasi:</strong> Struktur kode Python yang bersih, teroptimasi menggunakan energi lokal, dan dilengkapi dokumentasi informatif.</li>
+            <li><strong>Komunikasi Ilmiah:</strong> Visualisasi grafik (kisi akhir & kurva riwayat magnetisasi) yang lengkap dengan label sumbu, judul, dan interpretasi fisis ilmiah yang mendalam.</li>
+        </ul>
+
+        <div class="section-title">Atribusi & Penggunaan Teknologi</div>
+        <p><strong>Penggunaan Kecerdasan Buatan (AI):</strong></p>
+        <ul class="task-steps" style="list-style-type: square;">
+            <li><em>Gemini 3.1 Pro</em> digunakan untuk mendesain struktur instruksi tugas serta melakukan optimasi sintaksis algoritma Metropolis pada potongan kode simulasi.</li>
+            <li><em>Claude Sonnet 4.6</em> digunakan untuk memvalidasi penalaran fisis penurunan persamaan energi lokal dan penataan komponen dokumen markdown.</li>
+        </ul>
+
+        <p><strong>Penggunaan Aplikasi Pendukung:</strong></p>
+        <ul class="task-steps" style="list-style-type: square;">
+            <li><em>Jupyter Software</em> untuk menyediakan lingkungan eksekusi kode secara interaktif, penulisan analisis berbasis teks formal, dan penampilan visualisasi kurva magnetisasi secara inline.</li>
+            <li><em>Miniconda</em> untuk manajemen isolasi lingkungan virtual (virtual environment) Python guna memastikan kestabilan versi pustaka numpy dan matplotlib yang digunakan.</li>
+        </ul>
+
+        <div class="footer-note">
+            Referensi: (1) Landau, D. P., dkk. <em>A Guide to Monte Carlo Simulations in Statistical Physics</em>. (2) Rifani, Agus. <em>Modul Pembelajaran: Simulasi Model Magnet dan Transisi Fasa</em>.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>This decrypted ISO was made by ROMSFUN.COM, please don't change the credit.
+Download more roms at romsfun.com and romspure.cc
